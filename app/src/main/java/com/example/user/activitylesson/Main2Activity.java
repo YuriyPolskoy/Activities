@@ -3,6 +3,7 @@ package com.example.user.activitylesson;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -11,7 +12,10 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.e("Life", "onCreate");
         setContentView(R.layout.activity_main2);
-        setResult(RESULT_OK);
+
+        TextView textView = (TextView) findViewById(R.id.textView2);
+        String data = getIntent().getStringExtra(MainActivity.KEY);
+        textView.setText(data);
     }
 
     protected void onRestart() {

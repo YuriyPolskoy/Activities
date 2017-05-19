@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KEY = "KEY";
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("COLOR", Color.RED);
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick (View v) {
                 /*Intent act2 = new Intent(MainActivity.this, Main2Activity.class);
                 startActivityForResult(act2, 444);*/
-                rltLayout.setBackgroundColor(Color.RED);
+               Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                intent.putExtra(KEY, "Text");
+                MainActivity.this.startActivity(intent);
             }
         });
 
